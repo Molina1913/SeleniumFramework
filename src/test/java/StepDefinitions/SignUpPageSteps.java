@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import org.PageObjects.SetUp;
 import org.PageObjects.SignUpPageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,9 +12,8 @@ public class SignUpPageSteps {
 
 
     @Test
-    public void signUpTest(){
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+    public void signUpTest() {
+        WebDriver driver = SetUp.InitializeDriver();
         SignUpPageObjects signUpPageObjects = new SignUpPageObjects(driver);
         signUpPageObjects.openUrl("https://demo.automationtesting.in/Register.html");
         signUpPageObjects.writeFirstName("Luis");
@@ -23,7 +23,7 @@ public class SignUpPageSteps {
         signUpPageObjects.selectRadioButtonMale();
         signUpPageObjects.phone("323333333");
         signUpPageObjects.selectCheckBoxCricket();
-        signUpPageObjects.selectLanguage("Arabic");
+        signUpPageObjects.selectLanguage("Arabic", driver);
         signUpPageObjects.selectSkills("Java");
         signUpPageObjects.selectCountry(0);
         signUpPageObjects.selectYearDateOfBirth("1996");
@@ -33,9 +33,6 @@ public class SignUpPageSteps {
         signUpPageObjects.writeConfirmPassword("jkfdsfbksa");
         signUpPageObjects.clickSubmitButton();
         driver.close();
-
-
-
 
 
     }
