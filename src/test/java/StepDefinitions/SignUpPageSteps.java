@@ -13,7 +13,7 @@ public class SignUpPageSteps {
 
     @Test
     public void signUpTest() {
-        WebDriver driver = SetUp.InitializeDriver();
+        WebDriver driver = SetUp.InitializeChromeDriver();
         SignUpPageObjects signUpPageObjects = new SignUpPageObjects(driver);
         signUpPageObjects.openUrl("https://demo.automationtesting.in/Register.html");
         signUpPageObjects.writeFirstName("Luis");
