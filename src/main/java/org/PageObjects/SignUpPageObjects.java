@@ -3,14 +3,19 @@ package org.PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Set;
 
 public class SignUpPageObjects {
 
-    private WebDriver webDriver;
+
+    private WebDriver webDriver = new ChromeDriver();
+    public WebDriverWait wait = new WebDriverWait(webDriver, 20);
     private By firstNameTextBox = By.xpath("//input[@ng-model = 'FirstName']");
     private By lastNameTextBox = By.xpath("//input[@ng-model = 'LastName']");
     private By adress = By.xpath("//textarea[@ng-model = 'Adress']");
@@ -24,15 +29,16 @@ public class SignUpPageObjects {
     private By selectLanguagesList = By.xpath("//div[@id='msdd']");
     private By skillsSelect = By.xpath("//select[@ng-model = 'Skill']");
     private By countrySelect = By.xpath("//select[@ng-model = 'country']");
-    private By yearDateofBirthSelect = By.xpath("//select[@ng-model = 'yearbox']");
-    private By monthDateofBirthSelect = By.xpath("//select[@ng-model = 'monthbox']");
-    private By dayDateofBirthSelect = By.xpath("//select[@ng-model = 'daybox']");
+    private By yearDateOfBirthSelect = By.xpath("//select[@ng-model = 'yearbox']");
+    private By monthDateOfBirthSelect = By.xpath("//select[@ng-model = 'monthbox']");
+    private By dayDateOfBirthSelect = By.xpath("//select[@ng-model = 'daybox']");
     private By password = By.xpath("//input[@ng-model = 'Password']");
     private By confirmPassword = By.xpath("//input[@ng-model = 'CPassword']");
     private By submitButton = By.xpath("//button[@id = 'submitbtn']");
     private By refreshButton = By.xpath("//button[@id = 'Button1']");
 
     public SignUpPageObjects(WebDriver webDriver) {
+
         this.webDriver = webDriver;
     }
 
@@ -48,8 +54,8 @@ public class SignUpPageObjects {
         this.webDriver.findElement(this.lastNameTextBox).sendKeys(lastName);
     }
 
-    public void writeAdress(String lastName) {
-        this.webDriver.findElement(this.adress).sendKeys(lastName);
+    public void writeAdress(String adress) {
+        this.webDriver.findElement(this.adress).sendKeys(adress);
     }
 
     public void writeEmailAdress(String emailAdress) {
@@ -81,16 +87,34 @@ public class SignUpPageObjects {
     }
 
     public void selectLanguage(String language) {
+        wait.until(ExpectedConditions.elementToBeClickable(this.selectLanguagesList));
         this.webDriver.findElement(this.selectLanguagesList).click();
-        this.webDriver.findElement(By.xpath("//li/a[text()='" + language + "']")).click();
+        this.webDriver.findElement(By.xpath("//li/a[text()='"+ language+"']")).click();
     }
     public void selectSkills(String skillSelect) {
         Select select = new Select(this.webDriver.findElement(this.skillsSelect));
         select.selectByValue(skillSelect);
     }
-    public void selectCountry(String country) {
-        new Select(this.webDriver.findElement(this.countrySelect)).selectByValue(country);
+    public void selectCountry(int index) {
+        new Select(this.webDriver.findElement(this.countrySelect)).selectByIndex(index);
     }
-
+    public void selectYearDateOfBirth(String year) {
+        new Select(this.webDriver.findElement(this.yearDateOfBirthSelect)).selectByValue(year);
+    }
+    public void selectMonthDateOfBirth(String month) {
+        new Select(this.webDriver.findElement(this.monthDateOfBirthSelect)).selectByValue(month);
+    }
+    public void selectDayDateOfBirth(String day) {
+        new Select(this.webDriver.findElement(this.dayDateOfBirthSelect)).selectByValue(day);
+    }
+    public void writePassword(String password) {
+        this.webDriver.findElement(this.password).sendKeys(password);
+    }
+    public void writeConfirmPassword(String confirmPassword) {
+        this.webDriver.findElement(this.confirmPassword).sendKeys(confirmPassword);
+    }
+    public void clickSubmitButton(){
+        this.webDriver.findElement(this.submitButton).click();
+    }
 
 }
