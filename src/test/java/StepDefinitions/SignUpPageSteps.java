@@ -23,6 +23,7 @@ public class SignUpPageSteps {
         signUpPageObjects.selectRadioButtonMale();
         signUpPageObjects.phone("323333333");
         signUpPageObjects.selectCheckBoxCricket();
+        signUpPageObjects.scroll();
         signUpPageObjects.selectLanguage("Arabic", driver);
         signUpPageObjects.selectSkills("Java");
         signUpPageObjects.selectCountry(0);
