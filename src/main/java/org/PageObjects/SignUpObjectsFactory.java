@@ -2,6 +2,7 @@ package org.PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,127 +14,127 @@ public class SignUpObjectsFactory {
         PageFactory.initElements(driver, this);
     }
     @FindBy(xpath = "//input[@ng-model = 'FirstName']")
-    private WebDriver firstNameTextBox;
+    private WebElement firstNameTextBox;
     @FindBy(xpath = "//input[@ng-model = 'LastName']")
-    private WebDriver lastNameTextBox;
+    private WebElement lastNameTextBox;
     @FindBy(xpath = "//textarea[@ng-model = 'Adress']")
-    private WebDriver adress;
+    private WebElement adress;
     @FindBy(xpath = "//input[@ng-model = 'EmailAdress']")
-    private WebDriver emailAdress;
+    private WebElement emailAdress;
     @FindBy(xpath = "//input[@ng-model = 'Phone']")
-    private WebDriver phone;
+    private WebElement phone;
     @FindBy(xpath = "//input[@value = 'Male']")
-    private WebDriver inputMale;
+    private WebElement inputMale;
     @FindBy(xpath = "//input[@value = 'FeMale']")
-    private WebDriver inputFemale;
+    private WebElement inputFemale;
     @FindBy(xpath = "//input[@value = 'Cricket']")
-    private WebDriver checkboxCricket;
+    private WebElement checkboxCricket;
     @FindBy(xpath = "//input[@value = 'Movies']")
-    private WebDriver checkboxMovies;
+    private WebElement checkboxMovies;
     @FindBy(xpath = "//input[@value = 'Hockey']")
-    private WebDriver checkboxHockey;
+    private WebElement checkboxHockey;
     @FindBy(xpath = "//div[@id='msdd']")
-    private WebDriver selectLanguagesList;
+    private WebElement selectLanguagesList;
     @FindBy(xpath = "//select[@ng-model = 'Skill']")
-    private WebDriver skillsSelect;
+    private WebElement skillsSelect;
     @FindBy(xpath = "//select[@ng-model = 'country']")
-    private WebDriver countrySelect;
+    private WebElement countrySelect;
     @FindBy(xpath = "//select[@ng-model = 'yearbox']")
-    private WebDriver yearDateOfBirthSelect;
+    private WebElement yearDateOfBirthSelect;
     @FindBy(xpath = "//select[@ng-model = 'monthbox']")
-    private WebDriver monthDateOfBirthSelect;
+    private WebElement monthDateOfBirthSelect;
     @FindBy(xpath = "//select[@ng-model = 'daybox']")
-    private WebDriver dayDateOfBirthSelect;
+    private WebElement dayDateOfBirthSelect;
     @FindBy(xpath = "//input[@ng-model = 'Password']")
-    private WebDriver password;
+    private WebElement password;
     @FindBy(xpath = "//input[@ng-model = 'CPassword']")
-    private WebDriver confirmPassword;
+    private WebElement confirmPassword;
     @FindBy(xpath = "//button[@id = 'submitbtn']")
-    private WebDriver submitButton;
+    private WebElement submitButton;
     @FindBy(xpath = "//button[@id = 'Button1']")
-    private WebDriver refreshButton;
+    private WebElement refreshButton;
 
     public WebDriver getDriver() {
         return driver;
     }
 
-    public WebDriver getFirstNameTextBox() {
+    public WebElement getFirstNameTextBox() {
         return firstNameTextBox;
     }
 
-    public WebDriver getLastNameTextBox() {
+    public WebElement getLastNameTextBox() {
         return lastNameTextBox;
     }
 
-    public WebDriver getAdress() {
+    public WebElement getAdress() {
         return adress;
     }
 
-    public WebDriver getEmailAdress() {
+    public WebElement getEmailAdress() {
         return emailAdress;
     }
 
-    public WebDriver getPhone() {
+    public WebElement getPhone() {
         return phone;
     }
 
-    public WebDriver getInputMale() {
+    public WebElement getInputMale() {
         return inputMale;
     }
 
-    public WebDriver getInputFemale() {
+    public WebElement getInputFemale() {
         return inputFemale;
     }
 
-    public WebDriver getCheckboxCricket() {
+    public WebElement getCheckboxCricket() {
         return checkboxCricket;
     }
 
-    public WebDriver getCheckboxMovies() {
+    public WebElement getCheckboxMovies() {
         return checkboxMovies;
     }
 
-    public WebDriver getCheckboxHockey() {
+    public WebElement getCheckboxHockey() {
         return checkboxHockey;
     }
 
-    public WebDriver getSelectLanguagesList() {
+    public WebElement getSelectLanguagesList() {
         return selectLanguagesList;
     }
 
-    public WebDriver getSkillsSelect() {
+    public WebElement getSkillsSelect() {
         return skillsSelect;
     }
 
-    public WebDriver getCountrySelect() {
+    public WebElement getCountrySelect() {
         return countrySelect;
     }
 
-    public WebDriver getYearDateOfBirthSelect() {
+    public WebElement getYearDateOfBirthSelect() {
         return yearDateOfBirthSelect;
     }
 
-    public WebDriver getMonthDateOfBirthSelect() {
+    public WebElement getMonthDateOfBirthSelect() {
         return monthDateOfBirthSelect;
     }
 
-    public WebDriver getDayDateOfBirthSelect() {
+    public WebElement getDayDateOfBirthSelect() {
         return dayDateOfBirthSelect;
     }
 
-    public WebDriver getPassword() {
+    public WebElement getPassword() {
         return password;
     }
 
-    public WebDriver getConfirmPassword() {
+    public WebElement getConfirmPassword() {
         return confirmPassword;
     }
 
-    public WebDriver getSubmitButton() {
+    public WebElement getSubmitButton() {
         return submitButton;
     }
 
-    public WebDriver getRefreshButton() {
+    public WebElement getRefreshButton() {
         return refreshButton;
     }
 }

@@ -23,83 +23,83 @@ public class SignUpActionsFactory {
     }
 
     public void writeFirstName(String firstName) {
-        this.signUpObjectsFactory.getFirstNameTextBox().;
+        this.signUpObjectsFactory.getFirstNameTextBox().sendKeys(firstName);
     }
 
     public void writeLastName(String lastName) {
-        this.webDriver.findElement(this.lastNameTextBox).sendKeys(lastName);
+        this.signUpObjectsFactory.getLastNameTextBox().sendKeys(lastName);
     }
 
     public void writeAdress(String adress) {
-        this.webDriver.findElement(this.adress).sendKeys(adress);
+        this.signUpObjectsFactory.getAdress().sendKeys(adress);
     }
 
     public void writeEmailAdress(String emailAdress) {
-        this.webDriver.findElement(this.emailAdress).sendKeys(emailAdress);
+        this.signUpObjectsFactory.getEmailAdress().sendKeys(emailAdress);
     }
 
     public void phone(String phone) {
-        this.webDriver.findElement(this.phone).sendKeys(phone);
+        this.signUpObjectsFactory.getPhone().sendKeys(phone);
     }
 
     public void selectRadioButtonMale() {
-        this.webDriver.findElement(this.inputMale).click();
+        this.signUpObjectsFactory.getInputMale().click();
     }
 
     public void selectRadioButtonFemale() {
-        this.webDriver.findElement(this.inputFemale).click();
+        this.signUpObjectsFactory.getInputFemale().click();
     }
 
     public void selectCheckBoxCricket() {
-        this.webDriver.findElement(this.checkboxCricket).click();
+        this.signUpObjectsFactory.getCheckboxCricket().click();
     }
 
     public void selectCheckBoxMovies() {
-        this.webDriver.findElement(this.checkboxMovies).click();
+        this.signUpObjectsFactory.getCheckboxMovies().click();
     }
 
     public void selectCheckboxHockey() {
-        this.webDriver.findElement(this.checkboxHockey).click();
+        this.signUpObjectsFactory.getCheckboxHockey().click();
     }
 
     public void selectLanguage(String language, WebDriver driver) {
-        new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(this.selectLanguagesList));
-        driver.findElement(this.selectLanguagesList).click();
+        new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(this.signUpObjectsFactory.getSelectLanguagesList()));
+        this.signUpObjectsFactory.getSelectLanguagesList().click();
         driver.findElement(By.xpath("//li/a[text()='" + language + "']")).click();
     }
 
     public void selectSkills(String skillSelect) {
-        Select select = new Select(this.webDriver.findElement(this.skillsSelect));
+        Select select = new Select(this.signUpObjectsFactory.getSkillsSelect());
         select.selectByValue(skillSelect);
     }
 
     public void selectCountry(int index) {
-        new Select(this.webDriver.findElement(this.countrySelect)).selectByIndex(index);
+        new Select(this.signUpObjectsFactory.getCountrySelect()).selectByIndex(index);
     }
 
     public void selectYearDateOfBirth(String year) {
-        new Select(this.webDriver.findElement(this.yearDateOfBirthSelect)).selectByValue(year);
+        new Select(this.signUpObjectsFactory.getYearDateOfBirthSelect()).selectByValue(year);
     }
 
     public void selectMonthDateOfBirth(String month) {
-        new Select(this.webDriver.findElement(this.monthDateOfBirthSelect)).selectByValue(month);
+        new Select(this.signUpObjectsFactory.getMonthDateOfBirthSelect()).selectByValue(month);
     }
 
     public void selectDayDateOfBirth(String day) {
-        new Select(this.webDriver.findElement(this.dayDateOfBirthSelect)).selectByValue(day);
+        new Select(this.signUpObjectsFactory.getDayDateOfBirthSelect()).selectByValue(day);
     }
 
     public void writePassword(String password) {
-        this.webDriver.findElement(this.password).sendKeys(password);
+        this.signUpObjectsFactory.getPassword().sendKeys(password);
     }
 
     public void writeConfirmPassword(String confirmPassword) {
-        this.webDriver.findElement(this.confirmPassword).sendKeys(confirmPassword);
+        this.signUpObjectsFactory.getConfirmPassword().sendKeys(confirmPassword);
     }
 
     public void clickSubmitButton() {
-        this.webDriver.findElement(this.submitButton).click();
+        this.signUpObjectsFactory.getSubmitButton().click();
     }
 
 }
-}
+
