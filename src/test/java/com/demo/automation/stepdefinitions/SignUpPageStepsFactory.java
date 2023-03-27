@@ -1,6 +1,6 @@
-package StepDefinitions;
+package com.demo.automation.stepdefinitions;
 
-import org.PageObjects.SetUp;
+import config.SetUp;
 import org.PageObjects.SignUpActionsFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;

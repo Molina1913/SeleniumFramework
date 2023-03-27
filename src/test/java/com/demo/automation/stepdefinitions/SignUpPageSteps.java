@@ -1,11 +1,8 @@
-package StepDefinitions;
+package com.demo.automation.stepdefinitions;
 
-import org.PageObjects.SetUp;
+import config.SetUp;
 import org.PageObjects.SignUpPageObjects;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class SignUpPageSteps {
